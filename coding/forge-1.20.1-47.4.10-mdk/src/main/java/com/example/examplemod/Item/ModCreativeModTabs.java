@@ -1,6 +1,7 @@
 package com.example.examplemod.Item;
 
 import com.example.examplemod.BeesSweetsMod;
+import com.example.examplemod.Block.ModBlocks;
 import com.example.examplemod.Item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -21,6 +22,7 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.RUBY.get());
                         pOutput.accept(ModItems.RAW_RUBY.get());
+                        pOutput.accept(ModBlocks.RUBY_BLOCK.get());
 
                         pOutput.accept(Items.DIAMOND);
 

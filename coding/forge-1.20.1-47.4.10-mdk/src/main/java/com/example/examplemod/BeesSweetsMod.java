@@ -1,6 +1,7 @@
 package com.example.examplemod;
 
 import com.example.examplemod.Block.ModBlocks;
+import com.example.examplemod.Item.ModCreativeModTabs;
 import com.example.examplemod.Item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -43,6 +44,8 @@ public class BeesSweetsMod
     public BeesSweetsMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
