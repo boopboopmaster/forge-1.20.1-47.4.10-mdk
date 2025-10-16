@@ -1,6 +1,7 @@
 package com.example.examplemod.Block;
 
 import com.example.examplemod.BeesSweetsMod;
+import com.example.examplemod.Block.custom.MintCropBlock.MintCropBlock;
 import com.example.examplemod.Item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.BlockItem;
@@ -22,6 +23,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.AMETHYST)
+            .strength(2f).requiresCorrectToolForDrops()));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
     RegistryObject<T> toReturn = BLOCKS.register(name, block);
     registerBlockItem(name, toReturn);
@@ -30,6 +35,12 @@ public class ModBlocks {
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
+
+
+
+    public static final RegistryObject<Block> MINT_CROP = BLOCKS.register("mint_crop",
+            () -> new MintCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
 

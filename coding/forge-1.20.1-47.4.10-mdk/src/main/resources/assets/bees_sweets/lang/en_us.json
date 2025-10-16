@@ -1,6 +1,11 @@
 {
   "item.bees_sweets.ruby": "Ruby",
   "item.bees_sweets.raw_ruby": "Raw Ruby",
+  "item.bees_sweets.mint": "Mint",
+  "item.bees_sweets.mango": "Mango",
 
-  "block.bees_sweets.ruby_block": "Block of Ruby"
+
+  "block.bees_sweets.ruby_block": "Block of Ruby",
+
+  "block.bees_sweets.deepslate_sapphire_ore": "Deepslate Ruby Ore"
 }

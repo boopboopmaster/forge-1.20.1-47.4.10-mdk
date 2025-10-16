@@ -23,8 +23,11 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.RUBY.get());
                         pOutput.accept(ModItems.RAW_RUBY.get());
                         pOutput.accept(ModBlocks.RUBY_BLOCK.get());
+                        pOutput.accept(ModBlocks.DEEPSLATE_RUBY_ORE.get());
+                        pOutput.accept(ModItems.MINT.get());
+                        pOutput.accept(ModItems.MANGO.get());
+                        pOutput.accept(ModItems.MINT_SEEDS.get());
 
-                        pOutput.accept(Items.DIAMOND);
 
 
                     })
