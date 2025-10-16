@@ -1,5 +1,7 @@
 package com.example.examplemod;
 
+import com.example.examplemod.Block.ModBlocks;
+import com.example.examplemod.Item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -13,6 +15,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.CreativeModeTabRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -41,6 +44,9 @@ public class BeesSweetsMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -59,8 +65,13 @@ public class BeesSweetsMod
 
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {}
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RUBY);
+            event.accept(ModItems.RAW_RUBY);
+        }
+    }
+
 
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
